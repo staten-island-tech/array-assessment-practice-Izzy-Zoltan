@@ -89,7 +89,7 @@ const titles = [
 
 //Sort books from oldest to most recent
 bookdates=[]
-books.foreach((book)=>bookdate.push(object(books[book].name, books[book].publishDate)))
+books.foreach((book)=>bookdate.push(object(book.name, book.publishDate)))
 
 console.log(bookdates)
 
@@ -103,5 +103,9 @@ console.log(books[5].authorFirst,books[5].authorLast)
 //was there at least one book published within the last 100 years?
 
 //was every book published within the last 100 years?
-
+books.foreach((book)=>{
+  if ((2023-book.publishDate) > 100) {
+   console.log(false)
+  } 
+})
 //print a list of books that "includes" the genre historical
