@@ -88,11 +88,16 @@ const titles = [
 //"--- wrote --- in ---"
 
 //Sort books from oldest to most recent
+bookdates=[]
+books.foreach((book)=>bookdate.push(object(books[book].name, books[book].publishDate)))
+
+console.log(bookdates)
 
 //sort books alphabetically
-
+titles.sort()
+console.log(titles)
 //Find who wrote War and Peace
-
+console.log(books[5].authorFirst,books[5].authorLast)
 //how many books were written before 1900?
 
 //was there at least one book published within the last 100 years?
