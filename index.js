@@ -88,10 +88,21 @@ const titles = [
 //"--- wrote --- in ---"
 
 //Sort books from oldest to most recent
-bookdates=[]
-books.foreach((book)=>bookdate.push(object(book.name, book.publishDate)))
+ 
+const bookdates=[]
+const dates=[]
+books.forEach((book)=>bookdates.push([{'name':book.name},{'date':book.publishDate}]))
+books.forEach((book)=>dates.push(book.publishDate))
+dates.sort()
+const loggedbooknames=[]
+dates.forEach((year)=>{
+  let x=0
+  if bookdates[x][2].date.includes(year) 
+})
 
-console.log(bookdates)
+//for each book in date | if book[x] in bookdates[x] push bookdates[x].bookname
+
+console.log(dates)
 
 //sort books alphabetically
 titles.sort()
@@ -103,7 +114,7 @@ console.log(books[5].authorFirst,books[5].authorLast)
 //was there at least one book published within the last 100 years?
 
 //was every book published within the last 100 years?
-books.foreach((book)=>{
+books.forEach((book)=>{
   if ((2023-book.publishDate) > 100) {
    console.log(false)
   } 
