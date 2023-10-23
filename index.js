@@ -98,10 +98,8 @@ console.log(titles)
 const result = books.filter((book) => book.name === "War and Peace");
 console.log(result)
 //how many books were written before 1900?
-function before1900(a) {
-  return (a < 1900)
-}
-console.log(books.filter(before1900))
+const before1900 = books.filter((book) => book.publishDate < 1900);
+console.log(before1900.length)
 
 //was there at least one book published within the last 100 years?
 bookpublish100 = 'There were no books published within the last 100 years..'
