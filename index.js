@@ -95,7 +95,13 @@ console.log(books)
 titles.sort()
 console.log(titles)
 //Find who wrote War and Peace
+const result = books.filter((book) => book.name === "War and Peace");
+console.log(result)
 //how many books were written before 1900?
+function before1900(a) {
+  return (a < 1900)
+}
+console.log(books.filter(before1900))
 
 //was there at least one book published within the last 100 years?
 bookpublish100 = 'There were no books published within the last 100 years..'
