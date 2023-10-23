@@ -86,24 +86,10 @@ const titles = [
 
 //Array of authors and the book they wrote
 //"--- wrote --- in ---"
-
+books.forEach((book)=>console.log(book.authorFirst + ' ' + book.authorLast + ' wrote ' + book.name + ' in ' + book.publishDate))
 //Sort books from oldest to most recent
- 
-const bookdates=[]
-const dates=[]
-books.forEach((book)=>bookdates.push([{'name':book.name},{'date':book.publishDate}]))
-books.forEach((book)=>dates.push(book.publishDate))
-dates.sort()
-const loggedbooknames=[]
-dates.forEach((year)=>{
-  let x=0
-  if bookdates[x][2].date.includes(year) 
-})
-
-//for each book in date | if book[x] in bookdates[x] push bookdates[x].bookname
-
-console.log(dates)
-
+books.sort((a, b) => a.publishDate - b.publishDate)
+books.forEach((book)=>console.log(book.name))
 //sort books alphabetically
 titles.sort()
 console.log(titles)
@@ -112,11 +98,23 @@ console.log(books[5].authorFirst,books[5].authorLast)
 //how many books were written before 1900?
 
 //was there at least one book published within the last 100 years?
-
+bookpublish100 = 'There were no books published within the last 100 years..'
+books.forEach((book)=>{
+  if ((2023-book.publishDate) < 100) {
+    bookpublish100 = 'There was at least one book published within the last 100 years.'
+}})
+console.log(bookpublish100)
 //was every book published within the last 100 years?
+bookpublish100all = 'Every book was published within the last 100 years.'
 books.forEach((book)=>{
   if ((2023-book.publishDate) > 100) {
-   console.log(false)
-  } 
-})
+    bookpublish100all = 'Not every book was published within the last 100 years.'
+}})
+console.log(bookpublish100all)
 //print a list of books that "includes" the genre historical
+historical=[]
+books.forEach((book)=>{
+  if (book.genre.includes('historical')) {
+    historical.push(book.name)
+}})
+console.log(historical)
